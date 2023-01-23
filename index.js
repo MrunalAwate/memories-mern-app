@@ -14,15 +14,19 @@ app.use(cors());
 
 app.use('/posts', postRoutes);
 
-app.get('/', (req, res) => {
-    res.send('hello to memories API');
-});
+app.use('/', (req, res) => {
+    res.send('hello to memories API')
+})
 
-const PORT = process.env.PORT || 5000;
+app.listen(process.env.PORT || 5000, () => {
+    console.log('backend running')
+})
 
-mongoose.set('strictQuery', true);
+//const PORT = process.env.PORT || 5000;
 
-mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+//mongoose.set('strictQuery', true);
+
+/*mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
-    .catch((error) => console.log(error.message));
+    .catch((error) => console.log(error.message));*/
 
