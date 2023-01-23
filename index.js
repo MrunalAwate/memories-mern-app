@@ -20,11 +20,13 @@ app.use('/', (req, res) => {
     res.send('hello to memories API')
 })
 
-app.listen(process.env.PORT || 5000, () => {
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
     console.log('backend running')
 })
 
-const PORT = process.env.PORT || 5000;
+
 
 mongoose.set('strictQuery', true);
 
