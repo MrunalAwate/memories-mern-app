@@ -8,7 +8,7 @@ import postRoutes from './routes/posts.js';
 const app = express();
 dotenv.config();
 
-//const CONNECTION_URL = `mongodb+srv://mady:mady123@cluster0.gfwalob.mongodb.net/?retryWrites=true&w=majority`;
+const CONNECTION_URL = `mongodb+srv://mady:mady123@cluster0.gfwalob.mongodb.net/?retryWrites=true&w=majority`;
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
@@ -24,7 +24,7 @@ app.listen(process.env.PORT || 5000, () => {
     console.log('backend running')
 })
 
-//const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 mongoose.set('strictQuery', true);
 
