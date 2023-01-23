@@ -22,6 +22,10 @@ app.listen(process.env.PORT || 5000, () => {
     console.log('backend running')
 })
 
+mongoose.connect(CYCLIC_URL)
+.then(() => console.log(`Server running on port: ${PORT}`))
+.catch((error) => console.log('error connecting', error))
+
 //const PORT = process.env.PORT || 5000;
 
 //mongoose.set('strictQuery', true);
